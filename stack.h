@@ -6,11 +6,11 @@
 
 // Use inheritance from std::vector (choose public/private) as appropriate
 template <typename T>
-class Stack : provate std::vector<T>
+class Stack : private std::vector<T>
 {
 public:
-    Stack();
-    ~Stack();
+    Stack()=default;
+    ~Stack()=default;
     bool empty() const{
         return std::vector<T>::empty();
     }
@@ -23,14 +23,14 @@ public:
     void pop(){
         // throws std::underflow_error if empty
         if(empty()){
-            throw std::underflow_error("Stack is empty")
+            throw std::underflow_error("Stack is empty");
         }
         std::vector<T>::pop_back();
     } 
     const T& top() const{
         // throws std::underflow_error if empty
         if(empty()){
-            throw std::underflow_error("Stack is empty")
+            throw std::underflow_error("Stack is empty");
         }
         std::vector<T>::back();
     } 

@@ -18,4 +18,4 @@ circuit.o: circuit.cpp wire.h gate.h event.h ../heap.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c circuit.cpp
 
 clean:
-  rm -f *.o logicsim
+	rm -f *.o logicsim
